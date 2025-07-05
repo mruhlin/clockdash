@@ -1,0 +1,115 @@
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* TODO move to separate files? */
+
+
+body {
+  color: white;
+}
+
+.bg {
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  position: absolute;
+}
+
+.widgets {
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  position: absolute;
+  font-family: 'Amazon Ember V2', sans-serif;
+  font-weight: 800;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.clock {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.time {
+  line-height: 1em;
+  font-size: 128pt;
+}
+
+.date {
+  line-height: 1em;
+  font-size: 24pt;
+}
+
+.weather-x {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 24pt;
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}
+
+.bg > * {
+  flex: 1 100%;
+}
+
+.weather {
+  display: flex;
+  justify-content: space-between;
+  
+  flex: 1;
+
+}
+
+.clock {
+  flex: 2;
+}
+
+.current-weather {
+  font-size: 56pt;
+  flex: 2.5;
+}
+
+.forecast {
+  flex: 1;
+}
+.forecast .icon {
+  font-size: 36pt;
+}
+
+.forecast .low {
+  opacity: 50%;
+}
+
+.footer {
+  display: flex;
+  justify-content: right;
+  flex-direction: column-reverse;
+
+  flex: 1;
+}
+
+.footer .icon {
+  flex: 1;
+  font-size: 56pt;
+  width: 3em;
+}
