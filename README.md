@@ -1,7 +1,12 @@
 # Clockdash
 This app powers a simple clock and local weather forecast widget that sits on my desk running in a raspberry pi.
 
-Future iterations will include deployment scripts to automatically push updates to the kiosk.
+Run ./deploy.sh to deploy to a pi.
+
+# Pi configuration
+Set these up manually for now:
+- Create a service that runs `npm serve` out of the `~/clockdash-vite` dir
+- Create an auto-start script that launches chromium browser in kiosk mode pointed to   http://0.0.0.0:3000 (or whatever port runs the server)
 
 # Env Vars
 
@@ -12,4 +17,8 @@ VITE_OPENWEATHER_API_KEY= // API key for OpenWeatherAPI
 // Location to show weather for.
 VITE_WEATHER_LAT=45.72778806045063
 VITE_WEATHER_LON=-121.48423553656941
+
+DEPLOY_HOST= # pi to deploy to
+DEPLOY_USER= # username for pi to deploy to
+DEPLOY_PASS= # user password
 ```

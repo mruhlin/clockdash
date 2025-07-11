@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import useDebug from './useDebug';
 
 export default function useOpenWeather({ key, lat, lon, lang = 'en', unit = 'imperial' }) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const debug = useDebug();
 
   const excludes = 'minutely,alerts';
 
@@ -17,6 +19,10 @@ export default function useOpenWeather({ key, lat, lon, lang = 'en', unit = 'imp
       }
       const result = await response.json();
       setData(result);
+
+      if (debug) {
+        console.log('OpenWeather data:', result);
+      }
     } catch (err) {
       setError(err);
     } finally {

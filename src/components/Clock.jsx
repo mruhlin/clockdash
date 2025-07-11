@@ -1,23 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 export default function Clock() {
-  const timeFormat = { hour: 'numeric', minute: '2-digit', hour12: true };
-  const dateFormat = { weekday: 'long', month: 'short', day: 'numeric' };
+  const timeFormat = 'h:mm';
+  const dateFormat = 'dddd, MMMM Do';
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Update the current time every second
-  setInterval(() => {
-    setCurrentTime(new Date());
-  }, 1000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+  
   return (
     <div className="clock">
       <div className={'time'}>
-        {currentTime.toLocaleString([], timeFormat)}
+        {moment(currentTime).format(timeFormat)}
       </div>
         
       <div className="date">
-        {currentTime.toLocaleDateString('en-US', dateFormat)} <br/>
+        {moment(currentTime).format(dateFormat)}
       </div>
     </div>
   );

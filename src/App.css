@@ -87,10 +87,12 @@ body {
 .current-weather {
   font-size: 56pt;
   flex: 2.5;
+  text-align: center;
 }
 
 .forecast {
   flex: 1;
+  text-align: center;
 }
 .forecast .icon {
   font-size: 36pt;

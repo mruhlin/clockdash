@@ -14,11 +14,9 @@ export default function useRandomTheme(timeInterval = 1000 * 60 * 5) {
 
   useEffect(() => { 
     randomizeTheme(); // Set initial theme on mount
+    const interval = setInterval(randomizeTheme, timeInterval);
+    return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
-  
-  setInterval(() => {
-    randomizeTheme();
-  }, timeInterval);
 
   return {theme, iconSet};
 };
