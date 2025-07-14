@@ -72,8 +72,8 @@ function Weather({iconSet = 0, iconCount = 6}) {
   }
   else {
     return (
-       <div className="weather" key="heyweather">
-            <div className="current-weather"  onClick={() => setHourlyToggle(!hourlyToggle)}>
+       <div className="weather" key="heyweather" onClick={() => setHourlyToggle(!hourlyToggle)}>
+            <div className="current-weather">
               <FontAwesomeIcon icon={weatherIcon(data?.current?.weather[0].description, iconSet)} className="icon" /> 
               {Math.round(data?.current?.temp)}°
             </div>
