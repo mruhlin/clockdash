@@ -1,6 +1,8 @@
 # Clockdash
 This app powers a simple clock and local weather forecast widget that sits on my desk running in a raspberry pi.
 
+![example](./example.jpeg)
+
 Run ./deploy.sh to deploy to a pi.
 
 # Pi configuration
